@@ -21,7 +21,7 @@ connectDB();
 
 app.use(
   cors({
-    origin: "http://localhost:4200",
+    origin: ["http://localhost:4200","https://paper-shelf-front-endd-pent.vercel.app"],
     methods: ["GET", "POST", "PATCH", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
