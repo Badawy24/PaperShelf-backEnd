@@ -48,19 +48,8 @@ exports.getWishlist = async (req, res) => {
     try {
         const userId = req.user._id;
         const user = await User.findById(userId).populate('wishlist');
-        
-        // Ensure wishlist is always an array
-        const wishlist = user?.wishlist || [];
-        
-        res.status(200).json({ 
-            success: true, 
-            data: wishlist 
-        });
+        res.status(200).json({ success: true, data: user.wishlist });
     } catch (error) {
-        res.status(500).json({ 
-            success: false, 
-            message: error.message,
-            data: [] // Return empty array on error
-        });
+        res.status(500).json({ success: false, message: error.message });
     }
-};
+}; 
