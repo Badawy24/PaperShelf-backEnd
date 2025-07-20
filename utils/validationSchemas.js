@@ -757,5 +757,6 @@ module.exports = {
     validateCheckoutSchema,
     processCheckoutSchema,
     processPaymentSchema,
-    updateUserSchema 
+    updateUserSchema ,
+    googleSignInSchema
 };
