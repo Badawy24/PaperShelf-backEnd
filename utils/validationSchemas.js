@@ -677,12 +677,10 @@ const processPaymentSchema = Joi.object({
 
 // Book search query parameters schema
 const bookSearchSchema = Joi.object({
-    q: Joi.string()
-        .messages({
-            'string.min': 'Search query must be at least 1 character long',
-            'any.required': 'Search query is required'
-        }),
-
+q: Joi.string().allow('').optional()
+    .messages({
+        'string.base': 'Search query must be a string'
+    }),
     page: Joi.number()
         .integer()
         .min(1)
