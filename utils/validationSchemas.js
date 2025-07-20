@@ -141,7 +141,6 @@ const createBookSchema = Joi.object({
 author: Joi.string()
     .min(1)
     .max(100)
-    .required()
     .messages({
         'string.min': 'Author name must be at least 1 character long',
         'string.max': 'Author name cannot exceed 100 characters',
@@ -259,7 +258,6 @@ const updateBookSchema = Joi.object({
 author: Joi.string()
     .min(1)
     .max(100)
-    .required()
     .messages({
         'string.min': 'Author name must be at least 1 character long',
         'string.max': 'Author name cannot exceed 100 characters',
