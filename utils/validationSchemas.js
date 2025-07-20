@@ -138,7 +138,15 @@ const createBookSchema = Joi.object({
             'any.required': 'Title is required'
         }),
 
-
+author: Joi.string()
+    .min(1)
+    .max(100)
+    .required()
+    .messages({
+        'string.min': 'Author name must be at least 1 character long',
+        'string.max': 'Author name cannot exceed 100 characters',
+        'any.required': 'Author is required'
+    }),
 
     description: Joi.string()
         .min(10)
@@ -248,7 +256,15 @@ const updateBookSchema = Joi.object({
             'string.max': 'Title cannot exceed 200 characters'
         }),
 
-
+author: Joi.string()
+    .min(1)
+    .max(100)
+    .required()
+    .messages({
+        'string.min': 'Author name must be at least 1 character long',
+        'string.max': 'Author name cannot exceed 100 characters',
+        'any.required': 'Author is required'
+    }),
 
     description: Joi.string()
         .min(10)
